@@ -11,7 +11,7 @@ Loading and preprocessing the data
 
 ```{r loading data}
 getwd()
-sewd("C:/Users/Vikash/Desktop/Assignments/RProgramming")
+setwd("C:/Users/Vikash/Desktop/Assignments/RProgramming")
 unzip(zipfile = "Activity.zip", overwrite = TRUE, exdir = "C:/Users/Vikash/Desktop/Assignments/RProgramming", unzip = "internal")
 file1 <- read.csv("activity.csv", header = TRUE, stringsAsFactors = FALSE )
 str(file1)
