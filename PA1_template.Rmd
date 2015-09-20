@@ -1,5 +1,4 @@
 ---
----
 title: "PA1_template"
 author: "Vikash"
 date: "September 20, 2015"
@@ -12,7 +11,6 @@ Loading and preprocessing the data
 ```{r loading data}
 getwd()
 setwd("C:/Users/Vikash/Desktop/Assignments/RProgramming")
-unzip(zipfile = "Activity.zip", overwrite = TRUE, exdir = "C:/Users/Vikash/Desktop/Assignments/RProgramming", unzip = "internal")
 file1 <- read.csv("activity.csv", header = TRUE, stringsAsFactors = FALSE )
 str(file1)
 ```
@@ -33,7 +31,7 @@ What is mean and median total number of steps taken per day with histogram and b
 file1_valid <- file1[which(!is.na(file1$steps)),]
 perday <- tapply(file1_valid$steps, file1_valid$date, sum)
 hist(perday, 10,  main = "Total number of steps taken per day", xlab = "")
-steps_datedate <- aggregate(steps ~ date, file1_valid, sum)
+steps_date <- aggregate(steps ~ date, file1_valid, sum)
 head(steps_date)
 barplot(steps_date$steps, names.arg = steps_date$date, ylim = c(0, 25000), xlab = "date", ylab = "sum(steps)",)
 mean(perday)
